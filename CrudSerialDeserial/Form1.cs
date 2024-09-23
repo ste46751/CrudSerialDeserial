@@ -41,6 +41,15 @@ namespace CrudSerialDeserial
 
             }
 
+            public void Deserializzazione()
+            {
+                string s = Serializzazione();
+                string[] array = new string[2];
+                array = s.Split(';');
+
+            }
+
+
             public void Scrivi(List<Person> lista)
             {
                 StreamWriter sw = new StreamWriter("ListaE.txt");
@@ -96,6 +105,43 @@ namespace CrudSerialDeserial
                 {
 
                 }
+            }
+        }
+
+        private void bttn_Delete_Click(object sender, EventArgs e)
+        {
+            string n = txt_nome.Text;
+            string c = txt_cognome.Text;
+
+            string n1 = txt_ncambia.Text;
+            string c1 = txt_ccambia.Text;
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (n == lista[i]._nome && c == lista[i]._cognome)
+                {
+                    lista.Remove(lista[i]);
+                    lstbx_lista.Items.RemoveAt(i);
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (File.Exists("ListaE.txt") == false)
+            {
+                StreamReader sr = new StreamReader("ListaE.txt");
+
+                do
+                {
+                    string line = sr.ReadLine();
+
+
+                }while( sr.EndOfStream );
             }
         }
     }

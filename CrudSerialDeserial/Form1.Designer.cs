@@ -31,7 +31,7 @@
             this.Btn_Create = new System.Windows.Forms.Button();
             this.Btn_Read = new System.Windows.Forms.Button();
             this.Btn_Update = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.bttn_Delete = new System.Windows.Forms.Button();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.txt_cognome = new System.Windows.Forms.TextBox();
             this.lstbx_lista = new System.Windows.Forms.ListBox();
@@ -72,15 +72,16 @@
             this.Btn_Update.UseVisualStyleBackColor = true;
             this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
             // 
-            // button4
+            // bttn_Delete
             // 
-            this.button4.Location = new System.Drawing.Point(292, 142);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 19);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.bttn_Delete.Location = new System.Drawing.Point(292, 142);
+            this.bttn_Delete.Margin = new System.Windows.Forms.Padding(2);
+            this.bttn_Delete.Name = "bttn_Delete";
+            this.bttn_Delete.Size = new System.Drawing.Size(56, 19);
+            this.bttn_Delete.TabIndex = 3;
+            this.bttn_Delete.Text = "Delete";
+            this.bttn_Delete.UseVisualStyleBackColor = true;
+            this.bttn_Delete.Click += new System.EventHandler(this.bttn_Delete_Click);
             // 
             // txt_nome
             // 
@@ -132,7 +133,7 @@
             this.Controls.Add(this.lstbx_lista);
             this.Controls.Add(this.txt_cognome);
             this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.bttn_Delete);
             this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Btn_Read);
             this.Controls.Add(this.Btn_Create);
@@ -140,6 +141,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed_1);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,7 +152,7 @@
         private System.Windows.Forms.Button Btn_Create;
         private System.Windows.Forms.Button Btn_Read;
         private System.Windows.Forms.Button Btn_Update;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bttn_Delete;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.TextBox txt_cognome;
         private System.Windows.Forms.ListBox lstbx_lista;
