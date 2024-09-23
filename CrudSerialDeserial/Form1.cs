@@ -59,6 +59,7 @@ namespace CrudSerialDeserial
                     sw.WriteLine($"{lista[i]._nome};{lista[i]._cognome}");
                 }
                 sw.Close();
+
             }
         }
 
