@@ -38,7 +38,6 @@ namespace CrudSerialDeserial
             {
                 string s = $"{_nome};{_cognome}";
                 return s;
-
             }
 
             public void Deserializzazione()
@@ -122,16 +121,14 @@ namespace CrudSerialDeserial
             string n1 = txt_ncambia.Text;
             string c1 = txt_ccambia.Text;
 
-            for (int i = 0; i < lista.Count; i++)
+            foreach (Person person in lista) // Scorro la lista di oggetti
             {
-                if (n == lista[i]._nome && c == lista[i]._cognome)
+                if (n == person._nome) 
                 {
-                    lista.Remove(lista[i]);
-                    lstbx_lista.Items.RemoveAt(i);
-                }
-                else
-                {
-
+                    // Rimuovo l'elemento dalla lista e dalla listbox
+                    lstbx_lista.Items.Remove($"{person._nome};{person._cognome}");
+                    lista.Remove(person);
+                    break;
                 }
             }
         }
