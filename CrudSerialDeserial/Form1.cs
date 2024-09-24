@@ -71,6 +71,7 @@ namespace CrudSerialDeserial
             //Person person = new Person(n,c);
 
             lista.Add(new Person(n, c));
+            lstbx_lista.Items.Add($"{n};{c}");
         }
 
         private void Form1_FormClosed_1(object sender, FormClosedEventArgs e)
@@ -81,9 +82,12 @@ namespace CrudSerialDeserial
 
         private void Btn_Read_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0;i < lstbx_lista.Items.Count;i++)
             {
-                lstbx_lista.Items.Add($"{lista[i]._nome};{lista[i]._cognome}");
+                if(txt_nome.Text == lista[i]._nome)
+                {
+                    lstbx_lista.SelectedIndex = i;
+                }
             }
         }
 
@@ -137,14 +141,33 @@ namespace CrudSerialDeserial
             if (File.Exists("ListaE.txt") == false)
             {
                 StreamReader sr = new StreamReader("ListaE.txt");
-
                 do
                 {
                     string line = sr.ReadLine();
 
 
                 }while( sr.EndOfStream );
+                sr.Close();
+            }
+            else
+            {
+                StreamReader sr = new StreamReader("ListaE.txt");
+                string[] array = new string[2];
+                string linea = sr.ReadLine();
+                while (linea != null)
+                {
+                    if (linea != null)
+                    {
+                        array = linea.Split(';');
+                        Person person = new Person(array[0], array[1]);
+                        lista.Add(person);
+                    }
+                    linea = sr.ReadLine();
+                }
+                sr.Close();
             }
         }
+
+        
     }
 }

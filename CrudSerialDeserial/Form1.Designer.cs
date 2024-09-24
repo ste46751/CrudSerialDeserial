@@ -37,6 +37,8 @@
             this.lstbx_lista = new System.Windows.Forms.ListBox();
             this.txt_ncambia = new System.Windows.Forms.TextBox();
             this.txt_ccambia = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_Create
@@ -109,7 +111,7 @@
             // 
             // txt_ncambia
             // 
-            this.txt_ncambia.Location = new System.Drawing.Point(124, 198);
+            this.txt_ncambia.Location = new System.Drawing.Point(124, 215);
             this.txt_ncambia.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ncambia.Name = "txt_ncambia";
             this.txt_ncambia.Size = new System.Drawing.Size(76, 20);
@@ -117,17 +119,37 @@
             // 
             // txt_ccambia
             // 
-            this.txt_ccambia.Location = new System.Drawing.Point(250, 198);
+            this.txt_ccambia.Location = new System.Drawing.Point(250, 215);
             this.txt_ccambia.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ccambia.Name = "txt_ccambia";
             this.txt_ccambia.Size = new System.Drawing.Size(76, 20);
             this.txt_ccambia.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(161, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Inserisci nome e cognome";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(161, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Modifica/Elimina nome e cognome";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_ccambia);
             this.Controls.Add(this.txt_ncambia);
             this.Controls.Add(this.lstbx_lista);
@@ -158,6 +180,8 @@
         private System.Windows.Forms.ListBox lstbx_lista;
         private System.Windows.Forms.TextBox txt_ncambia;
         private System.Windows.Forms.TextBox txt_ccambia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
