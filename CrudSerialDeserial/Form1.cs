@@ -90,6 +90,7 @@ namespace CrudSerialDeserial
         private void Btn_Update_Click(object sender, EventArgs e)
         {
             string n = txt_nome.Text;
+
             string c = txt_cognome.Text;
 
             string n1 = txt_ncambia.Text;
