@@ -34,21 +34,6 @@ namespace CrudSerialDeserial
             {
 
             }
-            public string Serializzazione()
-            {
-                string s = $"{_nome};{_cognome}";
-                return s;
-            }
-
-            public void Deserializzazione()
-            {
-                string s = Serializzazione();
-                string[] array = new string[2];
-                array = s.Split(';');
-
-            }
-
-
             public void Scrivi(List<Person> lista)
             {
                 StreamWriter sw = new StreamWriter("ListaE.txt");
@@ -58,7 +43,6 @@ namespace CrudSerialDeserial
                     sw.WriteLine($"{lista[i]._nome};{lista[i]._cognome}");
                 }
                 sw.Close();
-
             }
         }
 
@@ -67,10 +51,11 @@ namespace CrudSerialDeserial
             string n = txt_nome.Text;
             string c = txt_cognome.Text;
 
-            //Person person = new Person(n,c);
-
             lista.Add(new Person(n, c));
             lstbx_lista.Items.Add($"{n};{c}");
+
+            txt_nome.Clear();
+            txt_cognome.Clear();
         }
 
         private void Form1_FormClosed_1(object sender, FormClosedEventArgs e)
@@ -88,6 +73,9 @@ namespace CrudSerialDeserial
                     lstbx_lista.SelectedIndex = i;
                 }
             }
+
+            txt_nome.Clear();
+            txt_cognome.Clear();
         }
 
         private void Btn_Update_Click(object sender, EventArgs e)
@@ -111,6 +99,9 @@ namespace CrudSerialDeserial
 
                 }
             }
+
+            txt_nome.Clear();
+            txt_cognome.Clear();
         }
 
         private void bttn_Delete_Click(object sender, EventArgs e)
@@ -131,6 +122,9 @@ namespace CrudSerialDeserial
                     break;
                 }
             }
+
+            txt_nome.Clear();
+            txt_cognome.Clear();
         }
 
         private void Form1_Load(object sender, EventArgs e)
